@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-RR-07B">
-                                <rect key="frame" x="36" y="784" width="342" height="30"/>
+                                <rect key="frame" x="36" y="433" width="342" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.55234752570000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -48,7 +48,7 @@
                             <constraint firstItem="mPm-RR-07B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vzg-Pe-iay"/>
                             <constraint firstItem="kPG-WX-WSe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="bTh-MU-dXw"/>
                             <constraint firstItem="kPG-WX-WSe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="fT7-Z9-BWS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mPm-RR-07B" secondAttribute="bottom" constant="48" id="fhz-Qq-RZI"/>
+                            <constraint firstItem="mPm-RR-07B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="j0m-ED-Zxh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

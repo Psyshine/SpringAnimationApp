@@ -16,28 +16,28 @@ class AnimationsViewController: UIViewController {
     
     // MARK: - Private properties
     private var index = 0
-    private let animations = Animation.getAnimations()
+    private let animations = Animation.getAnimation()
     
     // MARK: - Life cicle
     override func viewDidLoad() {
         super.viewDidLoad()
         mainLabel.layer.cornerRadius = 20
         mainLabel.layer.masksToBounds = true
-        nextAnimationButton.setTitle("Next animation is: \(animations[index])",
+        nextAnimationButton.setTitle("Next animation is: \(animations[index].name)",
             for: .normal)
     }
     
     // MARK: - IB Actions
     @IBAction func changeAnimationButton(_ sender: UIButton) {
         getDescription(with: animations[index], for: mainLabel)
-        runAnimation(with: animations[index], for: mainLabel)
+        runAnimation(with: animations[index].name, for: mainLabel)
         if index < animations.count - 1 {
             index += 1
         } else {
             index = 0
         }
         
-        nextAnimationButton.setTitle("Next animation is: \(animations[index])",
+        nextAnimationButton.setTitle("Next animation is: \(animations[index].name)",
             for: .normal)
     }
 }
@@ -45,18 +45,23 @@ class AnimationsViewController: UIViewController {
 extension AnimationsViewController {
   
     func runAnimation(with name: String, for label: SpringLabel) {
-           label.animation = name
-           label.animate()
+        mainLabel.animation = name
+        mainLabel.animate()
        }
        
-       func getDescription(with name: String, for label: SpringLabel) {
-           label.animation = name
+       func getDescription(with name: Animation, for label: SpringLabel) {
+        label.animation = name.name
+        print(label.animation)
+        let duration = String(format: "%.2f", name.duration)
+        let force = String(format: "%.2f", name.force)
+        let delay = String(format: "%.2f", name.delay)
+        let velocity = String(format: "%.2f", name.velocity)
            label.text = """
-           Name: \(name.description)
-           Duration: \(label.duration)
-           Force: \(label.force)
-           Delay: \(label.delay)
-           Velocity: \(label.velocity)
+            Name: \(name.name )
+           Duration: \(duration)
+           Force: \(force)
+           Delay: \(delay)
+           Velocity: \(velocity)
            """
        }
 }
