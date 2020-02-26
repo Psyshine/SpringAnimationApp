@@ -42,26 +42,28 @@ class AnimationsViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
 extension AnimationsViewController {
-  
+    
     func runAnimation(with name: String, for label: SpringLabel) {
         mainLabel.animation = name
         mainLabel.animate()
-       }
-       
-       func getDescription(with name: Animation, for label: SpringLabel) {
+    }
+    
+    func getDescription(with name: Animation, for label: SpringLabel) {
         label.animation = name.name
-        print(label.animation)
+        
         let duration = String(format: "%.2f", name.duration)
         let force = String(format: "%.2f", name.force)
         let delay = String(format: "%.2f", name.delay)
         let velocity = String(format: "%.2f", name.velocity)
-           label.text = """
-            Name: \(name.name )
-           Duration: \(duration)
-           Force: \(force)
-           Delay: \(delay)
-           Velocity: \(velocity)
-           """
-       }
+        
+        label.text = """
+        Name: \(name.name )
+        Duration: \(duration)
+        Force: \(force)
+        Delay: \(delay)
+        Velocity: \(velocity)
+        """
+    }
 }

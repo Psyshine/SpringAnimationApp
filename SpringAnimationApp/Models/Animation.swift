@@ -10,7 +10,6 @@ import Spring
 
 struct  Animation {
     let name: String
-    
     let delay: CGFloat
     let force: CGFloat
     let duration: CGFloat
@@ -18,16 +17,7 @@ struct  Animation {
 }
 
 extension Animation {
-//   static func getAnimations() -> [String] {
-//        var animations = [String]()
-//    let names = DataManger.shared.names
-//    for animation in 1..<names.count {
-//        animations.append(names[animation])
-//    }
-//        return animations
-//    }
-    
-   static func getAnimation() -> [Animation] {
+    static func getAnimation() -> [Animation] {
         let names = DataManger.shared.names
         var animations = [Animation]()
         for animation in 1..<names.count {
@@ -36,9 +26,7 @@ extension Animation {
                                         force: CGFloat.random(in: 0...1),
                                         duration: CGFloat.random(in: 0...1),
                                         velocity: CGFloat.random(in: 0...1)))
-            
         }
         return animations
     }
-    
 }
