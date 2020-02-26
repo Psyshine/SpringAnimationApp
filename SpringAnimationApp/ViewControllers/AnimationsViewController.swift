@@ -31,7 +31,6 @@ class AnimationsViewController: UIViewController {
     @IBAction func changeAnimationButton(_ sender: UIButton) {
         getDescription(with: animations[index], for: mainLabel)
         runAnimation(with: animations[index], for: mainLabel)
-      
         if index < animations.count - 1 {
             index += 1
         } else {
